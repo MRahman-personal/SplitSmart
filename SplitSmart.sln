@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitSmart", "SplitSmart\SplitSmart.csproj", "{85A75980-DBF7-4B4E-A757-727231A0A36E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{81BDB3E7-6BA1-4CAE-AEB3-9C3218583334}"
+	ProjectSection(SolutionItems) = preProject
+		PaymentProcessor.cs = PaymentProcessor.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85A75980-DBF7-4B4E-A757-727231A0A36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85A75980-DBF7-4B4E-A757-727231A0A36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85A75980-DBF7-4B4E-A757-727231A0A36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85A75980-DBF7-4B4E-A757-727231A0A36E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BD2C21D-B369-45D4-BFB6-4BECD3DA20C5}
+	EndGlobalSection
+EndGlobal

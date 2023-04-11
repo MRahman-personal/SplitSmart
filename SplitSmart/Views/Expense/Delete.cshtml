@@ -1,0 +1,18 @@
+@model SplitSmart.Models.ExpenseModel
+
+@{
+    ViewData["Title"] = "Delete Expense";
+}
+
+<h3>Delete Expense</h3>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ExpenseId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to Expenses</a>
+    </form>
+</div>

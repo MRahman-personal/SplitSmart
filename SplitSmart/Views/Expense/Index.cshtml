@@ -1,0 +1,82 @@
+@model IEnumerable<SplitSmart.Models.ExpenseModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="centertitle">Expenses</h3>
+
+<p>
+    <a class="centertitle" asp-action="Create">Create New Expense</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseGroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User1Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User2Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User3Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User4Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User5Balance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseGroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User1Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User2Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User3Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User4Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User5Balance)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ExpenseId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.ExpenseId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

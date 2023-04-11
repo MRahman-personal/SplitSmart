@@ -1,0 +1,58 @@
+@model SplitSmart.Models.GroupModel
+
+@{
+    ViewData["Title"] = "Edit Group";
+}
+
+<h3>Edit Group</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GroupId" />
+            <div class="form-group">
+                <label asp-for="GroupName" class="control-label"></label>
+                <input asp-for="GroupName" class="form-control" />
+                <span asp-validation-for="GroupName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Member1" class="control-label"></label>
+                <input asp-for="Member1" class="form-control" />
+                <span asp-validation-for="Member1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Member2" class="control-label"></label>
+                <input asp-for="Member2" class="form-control" />
+                <span asp-validation-for="Member2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Member3" class="control-label"></label>
+                <input asp-for="Member3" class="form-control" />
+                <span asp-validation-for="Member3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Member4" class="control-label"></label>
+                <input asp-for="Member4" class="form-control" />
+                <span asp-validation-for="Member4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Member5" class="control-label"></label>
+                <input asp-for="Member5" class="form-control" />
+                <span asp-validation-for="Member5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Groups</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

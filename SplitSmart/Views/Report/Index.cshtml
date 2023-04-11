@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SplitSmart.Models.ReportViewModel>
+
+@{
+    ViewData["Title"] = "SplitSmart";
+}
+<br />
+<h4 class="centertitle">Expense/Payment Report</h4>
+<br />
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GroupName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpenseType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpenseDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpenseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h4>Total Balance:</h4>
+<p>@ViewData["balance"]</p>
+<hr />
+<button class="reportbutton" onclick="window.print()">Print Report</button>

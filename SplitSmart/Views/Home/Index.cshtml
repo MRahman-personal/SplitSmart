@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SplitSmart.Models.UserExpenseViewModel>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "SplitSmart";
+}
+<br />
+<h2 class="centertitle">User Dashboard</h2>
+<br />
+<hr />
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h4>Notifications:</h4>
+        <p>@ViewData["notification1"]</p>
+        <p>@ViewData["notification2"]</p>
+        <p>@ViewData["notification3"]</p>
+        <p>@ViewData["notification4"]</p>
+        <p>@ViewData["notification5"]</p>
+        <hr />
+        <h4>Total Balance:</h4>
+        <p>@ViewData["balance"]</p>
+        <hr />
+        <h4>My Expenses:</h4>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.GroupName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpenseDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpenseDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GroupName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        <a asp-action="MakePayment" asp-route-id="@item.UserExpenseId">Make Payment</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <h2 class="centertitle">Welcome to SplitSmart</h2>
+    <br />
+    <h5 class="centertitle">SplitSmart is an application that lets you split expenses with a group of people and manage expenses, balances, and payments. Sign in or register for a new account.</h5>
+}
+
